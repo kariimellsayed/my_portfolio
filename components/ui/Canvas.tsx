@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
+import { Mesh } from "three";
 
 export const CanvasRevealEffect = ({
   animationSpeed = 0.4,
@@ -282,7 +283,7 @@ const ShaderMaterial = ({
   }, [size.width, size.height, source]);
 
   return (
-    <mesh ref={ref as React.Ref<THREE.Mesh>}>
+    <mesh ref={ref as React.Ref<Mesh>}>
       <planeGeometry args={[2, 2]} />
       <primitive object={material} attach="material" />
     </mesh>
